@@ -14,39 +14,7 @@
 [HTML5 跨屏前端框架Amaze](http://amazeui.org/)<br>
 [Element](http://element.eleme.io/#/zh-CN)<br>
 
-无意中发现的。。。<br>
-[js 媒体播放器](https://github.com/aadsm/jsmediatags)<br>
-[nodeJS 解析音频文件](https://segmentfault.com/q/1010000008329386)<br>
-[Mime types for JavaScript](https://github.com/broofa/node-mime)<br>
-[nwjs 用js写PC端桌面应用](https://nwjs.io/)<br>
-[nwjs 中文官网](https://nwjs.org.cn/)<br>
-[nwjs github](https://github.com/nwjs/nw.js)<br>
-[???](https://www.jsmusic.com.my/)<br>
-
-https://github.com/Fee-ing
-https://github.com/bxm0927
-https://github.com/Nealyang
-https://github.com/mengkunsoft/MKOnlineMusicPlayer
-
-python web 框架
-https://github.com/tornadoweb/tornado
-https://github.com/django/django
-以及python写的网页版音乐播放器 https://github.com/ppproxy/listen1
-
-awesome -- https://github.com/bayandin/awesome-awesomeness
-https://github.com/vinta/awesome-python -- python
-https://github.com/vuejs/awesome-vue -- vue
-https://github.com/enaqx/awesome-react -- react
-https://github.com/brillout/awesome-react-components -- react components
-https://github.com/sindresorhus/awesome-nodejs -- nodejs
-https://github.com/sindresorhus/awesome-electron -- electron
-https://github.com/wasabeef/awesome-android-ui -- android-ui
-https://github.com/vsouza/awesome-ios -- ios
-https://github.com/josephmisiti/awesome-machine-learning -- 机器学习
-https://github.com/30-seconds/30-seconds-of-code -- 前端小知识
-https://github.com/xingshaocheng/architect-awesome -- 后端架构师技术图谱
-
-### 准备ipfs
+### 准备ipfs(其实后面完全没用上)
 
 先去[官网](https://ipfs.io/docs/install/)下载ipfs压缩包，在一个目录下解压，然后将ipfs.exe的文件目录加入到环境变量的path中。
 之后在命令行中用ipfs init创建ipfs节点，如果是windows环境，那么会在C:\Users\Administrator\目录下有一个.ipfs文件夹，里面可以进行节点的配置
@@ -75,12 +43,16 @@ ipfs cat /ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/readme
 ```
 就可以通过http://localhost:5001/webui看到官方给我们提供的项目例子了。
 
-### login
+### 总体目录布局
+
+
+
+### login页面
 
 - login
 - register
 
-改进，应该用弹出与main一起的：
+改进，应该在main中使用弹出窗口来代替login页面的一起的：
 ```html
 <button class="btn btn-primary" type="button">点击我</button>
 <div class="modal" id="mymodal">
