@@ -1,4 +1,3 @@
-// https://www.cnblogs.com/cyy-13/p/5775344.html -- JS页面跳转大全
 $(document).ready(() => {
     // 绑定请求音乐的事件
     function bind() {

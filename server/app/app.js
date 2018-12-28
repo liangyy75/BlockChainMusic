@@ -1,7 +1,3 @@
-// ipfs-http-client
-// https://github.com/chyingp/nodejs-learning-guide
-// https://blog.csdn.net/zhujun_xiaoxin/article/details/79090976
-// NodeJS下载文件实例 -- https://www.cnblogs.com/lishuyi/p/5213505.html
 const express = require("express");
 const bodyParser = require("body-parser");
 const multer = require("multer");   // 文件上传
@@ -59,16 +55,11 @@ deploy.getDeployedContract(function (contractInstance) {
     var storage = multer.diskStorage({
         destination: function (req, file, cb) { cb(null, "../upload"); },
         filename: function (req, file, cb) {
-            // console.log(file.fieldname); // songfile
-            // console.log(file.filename);  // undefined
-            // console.log(file.originalname);  // test.txt
-            // cb(null, Date.now() + " " + file.originalname);
             cb(null, (new Date()).myformat("yyyy-MM-dd hh-mm-ss") + "  " + file.originalname);
         }
     });
     var upload = multer({ storage: storage });
     app.use(upload.single("songfile"));
-    // app.use(upload.any());   // ???
     // app.use(upload.array("file", 10));   // 可以接受音乐文件数组，最多10个，但需要req.files
 
     function checkAddress(using_address) {

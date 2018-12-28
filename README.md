@@ -1,9 +1,18 @@
+[TOC]
+
 ### 参考链接
 
 [IPFS-环境搭建](https://blog.csdn.net/u013022210/article/details/80363107)<br>
 [使用ajax提交form表单，包括ajax文件上传](https://www.cnblogs.com/zhuxiaojie/p/4783939.html)<br>
 [理解Cookie和Session的区别及使用](https://blog.csdn.net/liyifan687/article/details/80077928)<br>
 [express 中间件](http://www.expressjs.com.cn/resources/middleware.html)<br>
+[JS页面跳转大全](https://www.cnblogs.com/cyy-13/p/5775344.html)<br>
+[input file样式，文件路径、文件名的获取](https://www.cnblogs.com/ghfjj/p/6306222.html)<br>
+[input file控件限制上传文件类型](https://www.cnblogs.com/haocool/p/3431181.html)<br>
+[jQuery操作元素节点的方法（创建、选择、插入节点）](https://www.cnblogs.com/youbiao/p/9060639.html)<br>
+https://github.com/chyingp/nodejs-learning-guide<br>
+[express中间件之cookie-session的使用](https://blog.csdn.net/zhujun_xiaoxin/article/details/79090976)<br>
+[NodeJS下载文件实例](https://www.cnblogs.com/lishuyi/p/5213505.html)<br>
 
 弄完页面后发现的。。。<br>
 [轻量级前端框架H-ui](http://www.h-ui.net/Hui-overview.shtml)<br>
@@ -45,7 +54,9 @@ ipfs cat /ipfs/QmYwAPJzv5CZsnA625s3Xf2nemtYgPpHdWEz79ojWnPbdG/readme
 
 ### 总体目录布局
 
+![目录结构](./images/目录结构.png)
 
+- 其中
 
 ### login页面
 

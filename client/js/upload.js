@@ -1,7 +1,3 @@
-// https://www.cnblogs.com/zhuxiaojie/p/4783939.html -- 使用ajax提交form表单，包括ajax文件上传
-// https://www.cnblogs.com/ghfjj/p/6306222.html -- input file样式，文件路径、文件名的获取
-// https://www.cnblogs.com/haocool/p/3431181.html -- input file控件限制上传文件类型
-// [jQuery操作元素节点的方法（创建、选择、插入节点）](https://www.cnblogs.com/youbiao/p/9060639.html)
 $(document).ready(() => {
     var alltags = [];
     $("#addtag").click(function(e) {
@@ -100,11 +96,11 @@ $(document).ready(() => {
                 contentType: false,
                 success: response => {
                     confirm("添加音乐成功");
-                    // uploadForm.reset();
+                    uploadForm.reset();
                 },
                 error: response => {
                     alert("发生错误");
-                    // uploadForm.reset();
+                    uploadForm.reset();
                 }
             });
             // var req = new XMLHttpRequest();

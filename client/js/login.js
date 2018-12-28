@@ -1,4 +1,3 @@
-// https://www.cnblogs.com/zhuxiaojie/p/4783939.html
 $(document).ready(() => {
     $("body").css({
         height: $(window).height() + "px",
@@ -18,7 +17,6 @@ $(document).ready(() => {
                     userdesc: userdesc
                 },
                 success: (response) => {
-                    // window.location.replace("/main");
                     window.location.href = "/main";
                 },
                 error: (response) => {
@@ -40,7 +38,6 @@ $(document).ready(() => {
                     loginaddress: loginaddress
                 },
                 success: response => {
-                    // window.location.replace("/main");
                     window.location.href = "/main";
                 },
                 error: response => {
@@ -53,15 +50,3 @@ $(document).ready(() => {
             confirm("地址为必填项~");
     });
 });
-// $.post(
-//     "/login", {
-//         username: username,
-//         registeraddress: registeraddress,
-//         userdesc: userdesc
-//     },
-//     data => {
-//         console.log(data);
-//         window.location.replace('/admin');
-//     },
-//     "json"
-// );
