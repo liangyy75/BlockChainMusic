@@ -1,0 +1,46 @@
+.upload.panel.panel-primary
+    .panel-heading
+        h1.panel-title.text-center 上传音乐
+    .panel-body
+        form#uploadForm.form-horizontal(role="form" onsubmit="return false")
+            .form-group.has-feedback
+                label(for="songname" class="col-sm-2 control-label") 歌曲名称
+                .col-sm-10
+                    input(type="text" class="form-control" id="songname" name="songname" placeholder="请输入歌曲名称")
+                    span.glyphicon.form-control-feedback
+            .form-group.has-feedback
+                label(for="songdesc" class="col-sm-2 control-label") 歌曲描述
+                .col-sm-10
+                    textarea(row="20" class="form-control" id="songdesc" name="songdesc" placeholder="请输入歌曲描述")
+                    span.glyphicon.form-control-feedback
+            .form-group.has-feedback
+                label(for="songfile" class="col-sm-2 control-label") 歌曲文件
+                .col-sm-4
+                    input.form-control(type="text" name="songfile2" id="songfile2" readonly)
+                    span.glyphicon.form-control-feedback
+                .col-sm-3
+                    a(href="javascript:void();" class="btn btn-primary radius") 浏览文件
+                    input.input-file(type="file" name="songfile" id="songfile" accept=".mp3,.wma")
+            .form-group
+                label(for="songtag1" class="col-sm-2 control-label") 歌曲tag
+                .col-sm-2
+                    //- - var songtags = ["经典", "民谣", "情歌", "纯音乐", "伤感", "英语", "古风", "轻松"];
+                    select.form-control.ignore#songtag1(multiple name="songtag1")
+                        - for (var index in songtags)
+                            option #{songtags[index]}
+            .form-group
+                label(for="songtag2" class="col-sm-2 control-label") 自定义tag
+                .col-sm-2
+                    input(type="text" class="form-control ignore" id="songtag2" name="songtag2" placeholder="可多次添加")
+                .col-sm-1
+                    button#addtag.btn.btn-primary 添加
+                .col-sm-6#definetags
+            .form-group
+                label(for="songprice" class="col-sm-2 control-label") 歌曲价位
+                .col-sm-10
+                    input(type="number" class="form-control ignore" id="songprice" name="songprice" placeholder="请输入歌曲价格(可不填，默认为0)")
+            .form-group
+                .col-sm-offset-2.col-sm-2
+                    button#register_button.btn.btn-primary(type="submit") 提交
+                .col-sm-2
+                    button#cancel_button.btn.btn-primary 取消

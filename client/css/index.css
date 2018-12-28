@@ -1,0 +1,198 @@
+@charset "utf-8";
+
+/* login */
+.nav_part {
+    width: 30%;
+    margin: 200px auto 0;
+}
+
+.content_part {
+    width: 30%;
+    margin: 0 auto;
+}
+
+/* main */
+.main_part {
+    width: 76%;
+    margin: 40px auto 0;
+    border: 1px solid #ccc;
+    height: 630px;
+    padding: 2%;
+}
+
+.bottom {
+    position: fixed;
+    left: 14%;
+    bottom: 80px;
+    width: 72%;
+    height: 34px;
+}
+
+.function_control {
+    margin-bottom: 40px;
+}
+
+.function_control>button,
+.bottom>button,
+.bottom>div,
+.albumcontrol>button {
+    margin-right: 1.6%;
+}
+
+.progress-box {
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    display: inline-block;
+}
+
+.dot {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-top: -5px;
+    background-color: #666;
+    cursor: pointer;
+}
+
+.dot:hover {
+    background-color: #444;
+}
+
+.progress {
+    position: relative;
+    left: 0;
+    top: 50%;
+    background-color: #bbb;
+    height: 2px;
+    margin-top: -1px;
+}
+
+.volume-box {
+    display: inline-block;
+    width: 15%;
+    height: 100%;
+    position: absolute;
+}
+
+.volume-space {
+    width: 15%;
+    display: inline-block;
+}
+
+/* music-list */
+.musicsheet {
+    height: 360px;
+    overflow: auto;
+}
+
+.download {
+    cursor: pointer;
+}
+
+/* left middle */
+#middle_left {
+    width: 72%;
+    display: inline-block;
+    position: relative;
+}
+
+/* right middle */
+#middle_right {
+    width: 20%;
+    height: 60%;
+    /* display: inline-block; */
+    float: right;
+    margin: 20px auto;
+    /* background-color: white; */
+    border-radius: 5%;
+}
+
+/* music-albums */
+#allmusic {
+    display: none;
+    width: 100%;
+    position: absolute;
+}
+
+.albumcards {
+    height: 360px;
+    width: 100%;
+    overflow: auto;
+}
+
+#musiclist {
+    display: block;
+    height: auto;
+}
+
+.albumcard {
+    width: 29%;
+    height: 150px;
+    padding: 1%;
+    overflow: hidden;
+    display: inline-block;
+    margin: 1%;
+    cursor: pointer;
+}
+
+.albumcontrol {
+    height: 40px;
+    margin-left: 1%;
+}
+
+/* #singer pane */
+#singerpane {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: -40px;
+}
+
+#singername {
+    display: inline-block;
+}
+
+#singerpane_back {
+    float: right;
+    margin: 20px;
+}
+
+.musicpane {
+    height: 300px;
+    overflow: auto;
+}
+
+/* upload */
+.upload {
+    width: 50%;
+    margin: 150px auto 0;
+}
+
+.input-file {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 1;
+    opacity: 0;
+    filter: alpha(opacity=0)
+}
+
+#definetags > span {
+    margin: 3px;
+}
+
+.formError {
+    color: red;
+    margin: 3px;
+}
+
+.formValid {
+    display: block;
+}

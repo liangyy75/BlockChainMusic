@@ -1,0 +1,34 @@
+ul.nav.nav-tabs.nav_part(role="tablist")
+    li.active: a(href="#login" data-toggle="tab" role="tab") 登陆
+    li: a(href="#register" data-toggle="tab" role="tab") 注册
+.tab-content.content_part
+    #login.tab-pane.active.fade.in
+        .panel.panel-default
+            .panel-body
+                form.form-horizontal(role='form' onsubmit="return false")
+                    .form-group
+                        label(for="loginaddress" class="col-sm-2 control-label") 地址
+                        .col-sm-10
+                            input(type="text" class="form-control" id="loginaddress" name="loginaddress" placeholder="请输入您的区块链地址")
+                    .form-group
+                        .col-sm-offset-2.col-sm-10
+                            button#login_button.btn.btn-default 登陆
+    #register.tab-pane.fade
+        .panel.panel-default
+            .panel-body
+                form.form-horizontal(role='form' onsubmit="return false")
+                    .form-group
+                        label(for="username" class="col-sm-2 control-label") 用户名
+                        .col-sm-10
+                            input(type="text" class="form-control" id="username" name="username" placeholder="请输入您的用户名")
+                    .form-group
+                        label(for="registeraddress" class="col-sm-2 control-label") 地址
+                        .col-sm-10
+                            input(type="text" class="form-control" id="registeraddress" name="registeraddress" placeholder="请输入您的区块链地址")
+                    .form-group
+                        label(for="userdesc" class="col-sm-2 control-label") 描述
+                        .col-sm-10
+                            textarea(row="12" class="form-control" id="userdesc" name="userdesc" placeholder="请输入您自己的描述(可为空)")
+                    .form-group
+                        .col-sm-offset-2.col-sm-10
+                            button#register_button.btn.btn-default 注册

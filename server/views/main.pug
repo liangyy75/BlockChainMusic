@@ -1,0 +1,157 @@
+h1.text-center Music
+.main_part
+    //- 顶部控制栏
+    .function_control
+        button.btn.btn-default#musiclist_btn(type="button") 正在播放
+        button.btn.btn-default#allmusic_btn(type="button") 所有歌曲
+        button.btn.btn-default#searchmusic_btn(type="button") 歌曲搜索
+        button.btn.btn-default#uploadmusic_btn(type="button") 上传歌曲
+        button.btn.btn-default#changeUser_btn(type="button") 修改个人信息
+    //- 底部控制栏
+    .bottom
+        //- 音量控制
+        button.btn.btn-default(type="button"): span.glyphicon.glyphicon-volume-up
+        .volume-box
+            .progress
+            .dot
+        .volume-space
+        //- 歌曲播放控制
+        button.btn.btn-default(type="button"): span.glyphicon.glyphicon-step-backward
+        button.btn.btn-default(type="button"): span.glyphicon.glyphicon-play
+        button.btn.btn-default(type="button"): span.glyphicon.glyphicon-step-forward
+        //- 播放进度
+        .progress-box
+            .progress
+            .dot
+    //- 中间左边
+    #middle_left
+        //- 歌曲列表
+        #musiclist
+            table.table
+                thead
+                    tr
+                        th.col-md-4 歌曲
+                        th.col-md-3 歌手
+                        th.col-md-3 类型
+                        th.col-md-2 操作
+            .musicsheet
+                table.table.table-hover(style="margin-top: -2px;")
+                    tbody#musicSheetBody
+                    //- - var musiclist = [];
+                    //- - for (var i = 0; i < 12; ++i) {
+                    //- -     musiclist.push({singer: "singer" +i, name: "name" +i, genre: "genre" + i, musicid: i});
+                    //- - }
+                    //- each music in musiclist && musiclist.length ? musiclist : []
+                    //-     tr
+                    //-         td.col-md-4 #{music.singer}
+                    //-         td.col-md-3 #{music.name}
+                    //-         td.col-md-3 #{music.genre}
+                    //-         td.col-md-2: a.glyphicon.glyphicon-download.download(href="/download/" + music.musicid)
+        //- Grid 每个上传了歌曲的人可以作为一个music album
+        #allmusic
+            //- - var musicalbums = [];
+            //- - for (var i = 0; i < 6; ++i) {
+            //- -     var musicalbum = {singer: "singer" + i, address: "address" + i, songs: []};
+            //- -     for (var j = 0; j < 3; ++j) {
+            //- -         musicalbum["songs"].push({musicid: i * 10 + j, title: "title" + i + j, genre: "genre" + i + j});
+            //- -     }
+            //- -     musicalbums.push(musicalbum)
+            //- - }
+            .albumcards.container(data-albumIndex="0" data-totalAlbums=`${totalAlbums}`)
+                //- .row
+                //-     each musicalbum, album_index in musicalbums && musicalbums.length > 0 ? musicalbums : []
+                //-         .panel.panel-primary.albumcard.col-sm-4(data-address=`${musicalbum.address}`)
+                //-             .panel-heading
+                //-                 h1.panel-title.text-center #{musicalbum.singer}
+                //-             .panel-body
+                //-                 each song, song_index in musicalbum.songs
+                //-                     div(data-musicid=`${song.musicid}`) #[span #{song.title}] #[span(style="float: right;") #{song.genre}]
+            .albumcontrol
+                button#albumsPrev.btn.btn-default(type="button"): span.glyphicon.glyphicon-chevron-left
+                button#albumsNext.btn.btn-default(type="button"): span.glyphicon.glyphicon-chevron-right
+        //- 每个歌手的歌手列表
+        #singerpane
+            //- - var musicalbum = {singer: "singer", address: "", songs: []};
+            //- - for (var j = 0; j < 12; j += 2) {
+            //- -     musicalbum["songs"].push({price: j, musicid: j, title: "title" + j, genre: "genre" + j, desc: "descdescdescdescdescdescdescdescdescdescdescdesc" + j})
+            //- -     musicalbum["songs"].push({price: j, musicid: j + 1, title: "title" + j + 1, genre: "genre" + j + 1, desc: "descdescdescdescdescdescdescdescdescdescdescdesc" + j})
+            //- - }
+            - if (typeof musicalbum == "undefined") musicalbum = {singer: "", address: "", songs: []};
+            h3#singername(data-address=`$(musicalbum.address)`) #{musicalbum.singer}
+            button.btn.btn-default#singerpane_back(type="button") #[span.glyphicon.glyphicon-arrow-left] 返回
+            table.table
+                thead
+                    tr
+                        th.col-md-2 歌曲
+                        th.col-md-2 类型
+                        th.col-md-6 描述
+                        th.col-md-2 操作
+            .musicpane
+                table.table.table-hover(style="margin-top: -2px;")
+                    tbody#musicPaneBody
+                    //- each song in musicalbum && musicalbum["songs"].length ? musicalbum["songs"] : []
+                    //-     tr
+                    //-         td.col-md-2 #{song.title}
+                    //-         td.col-md-2 #{song.genre}
+                    //-         td.col-md-6 #{song.desc}
+                    //-         td.col-md-2 #[a.glyphicon.glyphicon-shopping-cart.purchase(href="/download/" + song.musicid)]  #{song.price} eth
+    //- 用户信息
+    #middle_right
+        h2.text-center 欢迎回来!
+        - if (typeof user == "undefined") user = { name: "无名氏", deposit: 0, desc: "这个人很懒，什么都没留下" };
+        h3.text-center(style="margin-top: 30px;") #{user.name}
+        h4.text-center(style="margin-top: 30px;") 账户余额 -- #{user.deposit}
+        p.text-center(style="margin-top: 30px; font-size: 16px;") #{user.desc}
+        .modal.fade#usermodal
+            .modal-dialog
+                .modal-content
+                    .modal-header
+                        button.close(type="button" data-dismiss="modal") #[span(aria-hidden="true") &times;] #[span.sr-only Close]
+                        h4.text-center.modal-title 修改用户信息
+                    .modal-body
+                        form#changeUser_form.form-horizontal(role='form' onsubmit="return false")
+                            .form-group
+                                label(for="username" class="col-sm-2 control-label") 用户名
+                                .col-sm-10
+                                    input(type="text" class="form-control" id="username" name="username" value=`${user.name}`)
+                            .form-group
+                                label(for="registeraddress" class="col-sm-2 control-label") 地址
+                                .col-sm-10
+                                    input(type="text" class="form-control" id="registeraddress" name="registeraddress" value=`${user.address}` readonly)
+                            .form-group
+                                label(for="userdesc" class="col-sm-2 control-label") 描述
+                                .col-sm-10
+                                    textarea(row="12" class="form-control" id="userdesc" name="userdesc") #{user.desc}
+                            .form-group
+                                label(for="userdeposit" class="col-sm-2 control-label") 描述
+                                .col-sm-10
+                                    input(type="number" class="form-control" id="userdeposit" name="userdeposit" value=`${user.userdeposit}`)
+                    .modal-footer
+                        button.btn.btn-default(type="button" data-dismiss="modal") 关闭
+                        button#changeUser_submit.btn.btn-default(type="button") 确认
+    //- 搜索框
+    .modal.fade#searchmodal
+        .modal-dialog
+            .modal-content
+                .modal-header
+                    button.close(type="button" data-dismiss="modal") #[span(aria-hidden="true") &times;] #[span.sr-only Close]
+                    h4.modal-title 搜索音乐
+                .modal-body
+                    form#searchMusic_form.form-horizontal(role="form" onsubmit="return false")
+                        .form-group
+                            label.col-sm-3.control-label(for="searchtext") 输入音乐名字
+                            .col-sm-9
+                                input.form-control(type="text" name="searchtext" id="searchtext")
+                        if (songtags && songtags.length)
+                            .form-group
+                                label.col-sm-3.control-label(for="selecttag") 选择音乐标签
+                                .col-sm-3
+                                    select.form-control#selecttag(name="selecttag")
+                                        - songtags = ["全部", "经典", "民谣", "情歌", "纯音乐", "伤感", "英语"];
+                                        each tag, index in songtags
+                                            option #{tag}
+                .modal-footer
+                    button.btn.btn-default(type="button" data-dismiss="modal") 关闭
+                    button#searchMusic_submit.btn.btn-default.disabled(type="button") 确认
+                    //- 功能暂未实现
+//- 

@@ -1,0 +1,35 @@
+doctype
+html(lang='zh-CN')
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        title #{title}
+        link(href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet")
+        <!--[if lt IE 9]>
+            <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        //- 滚动条美化样式文件
+        link(rel="stylesheet" type="text/css" href="../../client/css/jquery.mCustomScrollbar.min.css")
+        //- 我自己的css
+        link(rel="stylesheet" type="text/css" href="../../client/css/index.css")
+    body.bg-success
+        - if (login && login == true)
+            include login.pug
+        - else if (main && main == true)
+            include main.pug
+        - else if (upload && upload == true)
+            include upload.pug
+        script(src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js")
+        script(src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js")
+        //- 滚动条美化插件
+        script(src="../../client/js/jquery.mCustomScrollbar.concat.min.js")
+        - if (login && login == true)
+            script(src="../../client/js/login.js")
+        - else if (main && main == true)
+            script(src="../../client/js/main.js")
+            script(src="https://code.createjs.com/1.0.0/soundjs.min.js")
+        - else if (upload && upload == true)
+            script(src="../../client/js/jquery.validate.min.js")
+            script(src="../../client/js/upload.js")
