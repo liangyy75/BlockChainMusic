@@ -83,7 +83,7 @@ deploy.getDeployedContract(function (contractInstance) {
 
     app.use(function (req, res, next) {
         console.log(req.session);
-        if (!req.session["user_address"] && req.url != "/login") res.redirect("/login");
+        if ((!req.session["user_address"] && req.url != "/login")) res.redirect("/login");
         else next();
     });
 
@@ -97,7 +97,7 @@ deploy.getDeployedContract(function (contractInstance) {
         let { username, registeraddress, userdesc, loginaddress } = req.body;
         let isRegister = typeof loginaddress == "undefined";
         let using_address = isRegister ? registeraddress : loginaddress;
-        // 验证地址
+        // 验证地址：必须是数字且在合法的10个测试账号里面
         if (!checkAddress(using_address)) res.status(500).send({ code: 500, data: [], msg: 'invalid address!' });
         // 登陆
         if (!isRegister) {
